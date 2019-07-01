@@ -62,8 +62,8 @@
               '<(javahome)/include/linux',
             ],
             'libraries': [
-              '-L<(javalibdir)',
-              '-Wl,-rpath,<(javalibdir)',
+              '-L$(HOME)/.surveycto_desktop/javaLocation/lib/server',
+              '-Wl,-rpath,$(HOME)/.surveycto_desktop/javaLocation/lib/server',
               '-ljvm'
             ]
           }
@@ -117,8 +117,8 @@
                     '<(javahome)/include/darwin'
                   ],
                   'libraries': [
-                    '-L$(HOME)/Library/Application\\ Support/SurveyCTODesktop/javaLocation/lib/server',
-                    '-Wl,-rpath,$(HOME)/Library/Application\\ Support/SurveyCTODesktop/javaLocation/lib/server',
+                    '-L$(HOME)/Library/Application\\ Support/SurveyCTO_Desktop/javaLocation/lib/server',
+                    '-Wl,-rpath,$(HOME)/Library/Application\\ Support/SurveyCTO_Desktop/javaLocation/lib/server',
                     '-ljvm'
                   ],
                 },
