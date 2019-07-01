@@ -24,6 +24,9 @@
       ['OS=="linux" or OS=="mac" or OS=="freebsd" or OS=="openbsd" or OS=="solaris"', {
         'javalibdir%': "<!(./find_java_libdir.sh <(target_arch) <(OS))"
       }],
+      ['OS=="linux" or OS=="mac" or OS=="freebsd" or OS=="openbsd" or OS=="solaris"', {
+        'homedir%': "<!(echo $HOME)"
+      }],
     ]
   },
   'targets': [
@@ -114,9 +117,9 @@
                     '<(javahome)/include/darwin'
                   ],
                   'libraries': [
-                    '-L<(javalibdir)',
-                    '-Wl,-rpath,<(javalibdir)',
-                    '-ljli'
+                    '-L$(HOME)/Library/Application\\ Support/SurveyCTODesktop/javaLocation/jre/lib/server',
+                    '-Wl,-rpath,$(HOME)/Library/Application\\ Support/SurveyCTODesktop/javaLocation/jre/lib/server',
+                    '-ljvm'
                   ],
                 },
               ],
