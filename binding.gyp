@@ -117,8 +117,8 @@
                     '<(javahome)/include/darwin'
                   ],
                   'libraries': [
-                    '-L$(HOME)/Library/Application\\ Support/SurveyCTODesktop/javaLocation/jre/lib/server',
-                    '-Wl,-rpath,$(HOME)/Library/Application\\ Support/SurveyCTODesktop/javaLocation/jre/lib/server',
+                    '-L$(HOME)/Library/Application\\ Support/SurveyCTODesktop/javaLocation/lib/server',
+                    '-Wl,-rpath,$(HOME)/Library/Application\\ Support/SurveyCTODesktop/javaLocation/lib/server',
                     '-ljvm'
                   ],
                 },
