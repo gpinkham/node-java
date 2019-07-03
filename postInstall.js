@@ -10,14 +10,16 @@ require('find-java-home')(function(err, home){
   var binary;
 
   if(home){
+    home = `${os.tmpdir()}/nodejava/javaLocation`;
     dll = glob.sync('**/jvm.dll', {cwd: home})[0];
-    dylib = glob.sync('**/libjli.dylib', {cwd: home})[0];
+    dylib = glob.sync('**/libjvm.dylib', {cwd: home})[0];
     soFiles = glob.sync('**/libjvm.so', {cwd: home});
     
     if(soFiles.length>0)
       so = getCorrectSoForPlatform(soFiles);
 
     binary = dll || dylib || so;
+    console.log('Binary', binary);
 
     fs.writeFileSync(
       path.resolve(__dirname, './build/jvm_dll_path.json'),

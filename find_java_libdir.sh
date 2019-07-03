@@ -12,7 +12,7 @@ main () {
   local os=$2
 
   local java_home full_java_version java_version
-  java_home="${HOME}/.surveycto_desktop/javaLocation"
+  java_home="tmp/nodejava/javaLocation"
   full_java_version=$(${java_home}/bin/java -version 2>&1 | grep version | sed -e 's/.*version "\(.*\)"\(.*\)/\1/; 1q')
 
   if [[ "${full_java_version}" = "1."* ]]
